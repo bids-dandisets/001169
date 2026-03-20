@@ -2,7 +2,7 @@
 		License
 		/dataset_description.json - Field description: The license for the dataset.
 The use of license name abbreviations is RECOMMENDED for specifying a license
-(see [Licenses](SPEC_ROOT/appendices/licenses.md)).
+(see [Licenses](https://bids-specification.readthedocs.io/en/stable/appendices/licenses.md)).
 The corresponding full license text MAY be specified in an additional
 `LICENSE` file.
 
@@ -14,7 +14,7 @@ The corresponding full license text MAY be specified in an additional
 		SourceDatasets
 		/dataset_description.json - Field description: Used to specify the locations and relevant attributes of all source datasets (BIDS or not).
 Valid keys in each object include `"URL"`, `"DOI"` (see
-[URI](SPEC_ROOT/common-principles.md#uniform-resource-indicator)), and
+[URI](https://bids-specification.readthedocs.io/en/stable/common-principles.md#uniform-resource-indicator)), and
 `"Version"` with
 [string](https://www.w3schools.com/js/js_json_datatypes.asp)
 values.
@@ -131,6 +131,14 @@ the stimuli during the experiment.
 
 	Please visit https://neurostars.org/search?q=JSON_KEY_REQUIRED for existing conversations about this issue.
 
+	[ERROR] TSV_EQUAL_ROWS All rows must have the same number of columns as there are headers.
+		/sub-C036/ses-RWTautowait2+20191119+125332/ecephys/sub-C036_ses-RWTautowait2+20191119+125332_events.tsv
+		/sub-C036/ses-RWTautowait2+20191121+133759/ecephys/sub-C036_ses-RWTautowait2+20191121+133759_events.tsv
+
+		303 more files with the same issue
+
+	Please visit https://neurostars.org/search?q=TSV_EQUAL_ROWS for existing conversations about this issue.
+
 	[ERROR] SIDECAR_KEY_REQUIRED A data file's JSON sidecar is missing a key listed as required.
 		PowerLineFrequency
 		/sub-C036/ses-RWTautowait2+20191119+125332/ecephys/sub-C036_ses-RWTautowait2+20191119+125332_ecephys.nwb - Field description: Frequency (in Hz) of the power grid at the geographical location of the
@@ -174,14 +182,6 @@ in which its parameters are defined as key-value pairs
 
 	Please visit https://neurostars.org/search?q=SIDECAR_KEY_REQUIRED for existing conversations about this issue.
 
-	[ERROR] TSV_EQUAL_ROWS All rows must have the same number of columns as there are headers.
-		/sub-C036/ses-RWTautowait2+20191119+125332/ecephys/sub-C036_ses-RWTautowait2+20191119+125332_events.tsv
-		/sub-C036/ses-RWTautowait2+20191121+133759/ecephys/sub-C036_ses-RWTautowait2+20191121+133759_events.tsv
-
-		303 more files with the same issue
-
-	Please visit https://neurostars.org/search?q=TSV_EQUAL_ROWS for existing conversations about this issue.
-
 	[ERROR] TSV_COLUMN_MISSING A required column is missing
 		onset
 		/sub-C036/ses-RWTautowait2+20191119+125332/ecephys/sub-C036_ses-RWTautowait2+20191119+125332_events.tsv - Required initial column 1 not found.
@@ -202,4 +202,3 @@ in which its parameters are defined as key-value pairs
           916 Files, 163 MB                                           microephys           
           10 - Subjects 305 - Sessions                                                     
 
-	If you have any questions, please post on https://neurostars.org/tags/bids.
