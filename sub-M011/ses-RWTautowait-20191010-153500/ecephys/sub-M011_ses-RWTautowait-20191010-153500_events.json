@@ -1,0 +1,128 @@
+{
+    "onset": {
+        "Description": "Onset of the event, measured from the beginning of the acquisition.",
+        "Units": "s"
+    },
+    "duration": {
+        "Description": "Duration of the event (measured from onset).",
+        "Units": "s"
+    },
+    "target_duration_for_nose_in_center": {
+        "Description": "The goal for how long the animal must poke center in seconds."
+    },
+    "violation_time_out": {
+        "Description": "The time-out if nose is center is not satisfied in seconds."
+    },
+    "reward_volume_ul": {
+        "Description": "The volume of reward in microliters."
+    },
+    "nose_in_center": {
+        "Description": "The time in seconds when the animal is required to maintain center port to initiate the trial (uniformly drawn from 0.8 - 1.2 seconds)."
+    },
+    "catch_percentage": {
+        "Description": "The percentage of catch trials."
+    },
+    "punish_sound_enabled": {
+        "Description": "Whether to play a white noise pulse on error."
+    },
+    "cumulative_reward_volume_ul": {
+        "Description": "The cumulative volume received during session in microliters."
+    },
+    "is_catch": {
+        "Description": "Whether the trial is a catch trial."
+    },
+    "is_warm_up": {
+        "Description": "Whether the trial is warm-up."
+    },
+    "trials_in_stage": {
+        "Description": "The cumulative number of trials in the stages."
+    },
+    "changed": {
+        "Description": "Whether a block transition occurred for the trial."
+    },
+    "block_type": {
+        "Description": "The block type (High, Low or Mixed). High and Low blocks are high reward (20, 40, or 80\u03bcL) or low reward (5, 10, or 20\u03bcL) blocks. The mixed blocks offered all volumes."
+    },
+    "auto_change_catch_probability": {
+        "Description": "Whether to change the probability automatically after a certain number of trials."
+    },
+    "previous_was_violation": {
+        "Description": "Whether the previous trial was a violation."
+    },
+    "time_increment_for_reward_delay": {
+        "Description": "The time increment during monotonic increase of reward delay."
+    },
+    "time_increment_for_nose_in_center": {
+        "Description": "The time increment for nose in center in seconds."
+    },
+    "reward_delay": {
+        "Description": "The delay in seconds to receive reward, drawn from exponential distribution with mean = 2.5 seconds."
+    },
+    "target_reward_delay": {
+        "Description": "The target delay in seconds to receive reward."
+    },
+    "training_stage": {
+        "Description": "The stage of the training."
+    },
+    "num_trials_in_adaptation_blocks": {
+        "Description": "The number of trials in each high reward (20, 40, or 80\u03bcL) or low reward (5, 10, or 20\u03bcL) blocks."
+    },
+    "num_trials_in_mixed_blocks": {
+        "Description": "The number of trials in each mixed blocks."
+    },
+    "is_rewarded": {
+        "Description": "Whether the subject received reward for each trial."
+    },
+    "is_violation": {
+        "Description": "Whether the subject violated the trial by not maintaining center poke for the time required by 'nose_in_center'."
+    },
+    "is_opt_out": {
+        "Description": "Whether the subject opted out for each trial."
+    },
+    "wait_time": {
+        "Description": "The wait time for the subject for for each trial in seconds, after removing outliers. For hit trials (when reward was delivered) the wait time is equal to the reward delay. For opt-out trials, the wait time is equal to the time waited from trial start to opting out."
+    },
+    "wait_time_unthresholded": {
+        "Description": "The wait time for the subject for each trial in seconds without removing outliers."
+    },
+    "wait_time_threshold": {
+        "Description": "The threshold in seconds to remove wait-times (mean + 1*std of all cumulative wait-times)."
+    },
+    "wait_for_center_poke": {
+        "Description": "The time between side port poke and center poke in seconds, includes the time when the subject is consuming the reward."
+    },
+    "z_scored_wait_for_center_poke": {
+        "Description": "The z-scored wait_for_cpoke using all trials."
+    },
+    "rewarded_port": {
+        "Description": "The rewarded port (Left or Right) for each trial."
+    },
+    "inter_trial_interval": {
+        "Description": "The time to initiate trial in seconds (the time between the end of the consummatory period and the time to initiate the next trial)."
+    },
+    "state_type": {
+        "Description": "The state type"
+    },
+    "nwb_table": {
+        "Description": "The name of the NWB table from which this event was extracted.",
+        "Levels": {
+            "trials": "The 'trials' table in the NWB file.",
+            "processed_trials": "The 'processed_trials' table in the NWB file.",
+            "states": "The 'states' table in the NWB file."
+        },
+        "HED": {
+            "trials": "Experimental-trial",
+            "processed_trials": "Time-interval",
+            "states": "Time-interval"
+        }
+    },
+    "trials": {
+        "Description": "Contains the raw Bpod trials.\nLED illumination from the center port indicated that the animal could initiate a trial by poking its nose in that\nport - upon trial initiation the center LED turned off. While in the center port, rats needed to maintain center\nfixation for a duration drawn uniformly from [0.8, 1.2] seconds. During the fixation period, a tone played from\nboth speakers, the frequency of which indicated the volume of the offered water reward for that trial\n[1, 2, 4, 8, 16kHz, indicating 5, 10, 20, 40, 80\u03bcL rewards]. Following the fixation period, one of the two side\nLEDs was illuminated, indicating that the reward might be delivered at that port; the side was randomly chosen on\neach trial.This event (side LED ON) also initiated a variable and unpredictable delay period, which was randomly\ndrawn from an exponential distribution with mean=2.5s. The reward port LED remained illuminated for the duration\nof the delay period, and rats were not required to maintain fixation during this period, although they tended to\nfixate in the reward port. When reward was available, the reward port LED turned off, and rats could collect the\noffered reward by nose poking in that port. The rat could also choose to terminate the trial (opt-out) at any time\nby nose poking in the opposite, un-illuminated side port, after which a new trial would immediately begin. On a\nproportion of trials (15\u201325%), the delay period would only end if the rat opted out (catch trials). If rats did\nnot opt-out within 100s on catch trials, the trial would terminate. The trials were self-paced: after receiving\ntheir reward or opting out, rats were free to initiate another trial immediately. However, if rats terminated\ncenter fixation prematurely, they were penalized with a white noise sound and a time out penalty (typically 2s,\nalthough adjusted to individual animals). Following premature fixation breaks, the rats received the same offered\nreward, in order to disincentivize premature terminations for small volume offers. We introduced semi-observable,\nhidden states in the task by including uncued blocks of trials with varying reward statistics: high and low blocks\n, which offered the highest three or lowest three rewards, respectively, and were interspersed with mixed blocks,\nwhich offered all volumes. There was a hierarchical structure to the blocks, such that high and low blocks\nalternated after mixed blocks (e.g., mixed-high-mixed-low, or mixed-low-mixed-high). The first block of each\nsession was a mixed block. Blocks transitioned after 40 successfully completed trials. Because rats prematurely\nbroke fixation on a subset of trials, in practice, block durations were variable.\n"
+    },
+    "processed_trials": {
+        "Description": "Contains the processed trials."
+    },
+    "states": {
+        "Description": "Contains the start and end times of each state in the task."
+    }
+}
